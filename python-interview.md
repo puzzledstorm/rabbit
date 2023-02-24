@@ -1,5 +1,11 @@
 # python collection
 
+# everyday plan
+```
+1. 基础整理
+2. 算法数据结构
+```
+
 ## 基础
 
 ## pandas numpy opencv等常用三方库
