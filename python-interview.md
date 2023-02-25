@@ -15,10 +15,11 @@
 ### 6. unittest单元测试
 ### 7. 生成器generator、迭代器iterator
 ### 8. 魔法函数
-### 9. 面向对象(封装、继承、多态)
 ```
 https://www.zywvvd.com/notes/coding/python/python-magic-func/python-magic-func/
 ```
+### 9. 面向对象(封装、继承、多态)
+
 
 ## pandas numpy opencv等常用三方库
 
