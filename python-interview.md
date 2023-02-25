@@ -8,7 +8,23 @@
 
 ## 基础
 ### 1. 装饰器
-### 2. 高级函数map, reduce, filter 匿名函数lambda
+```
+装饰器的一大特性是，能把被装饰的函数替换成其他函数。
+
+第二个特性是，装饰器在加载模块时立即执行。而被装饰的函数只在明确调用时运行。
+---
+变量作用域规则: 要想在内部函数中使用外部变量，必须做global声明
+闭包
+闭包指延伸了作用域的函数，其中包含函数定义体中引用、但是不在定义体中定义的非全局变量。
+
+https://puzzledstorm.github.io/posts/python-decorator/
+```
+闭包
+![image](https://user-images.githubusercontent.com/74460276/221344459-af047aa3-9e10-44f1-9fee-f7996d4a5f76.png)
+
+### 2. 高级函数map, reduce, filter，partil operator 匿名函数lambda 
+```
+```
 ### 3. 深浅拷贝
 ### 4. 线程，进程，协程
 ### 5. 上下文管理器
