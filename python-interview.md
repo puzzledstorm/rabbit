@@ -29,7 +29,7 @@ def make_averager():
 https://puzzledstorm.github.io/posts/python-decorator/
 ```
 
-### 2. 内置函数map, reduce, filter，sorted zip enumerate partial operator 匿名函数lambda 
+### 2. 内置函数map reduce filter sorted zip enumerate partial operator 匿名函数lambda 
 函数允许我们将复杂的问题分解为若干个子问题，并逐个解决。此外，它还可以减少重复性的代码，并为其他程序所重用。
 
 lambda: lambda表达式，匿名函数。
@@ -95,9 +95,59 @@ for i, v in enumerate(list1):
     print('{}:{}'.format(i, v)) 
 ```
 partial:
+```
+https://docs.python.org/3/library/functools.html#functools.partial
+from functools import partial
 
+def multiply(x, y):
+        return x * y
+
+# create a new function that multiplies by 2
+dbl = partial(multiply, 2)
+print(dbl(4))
+```
 operator:
 ```
+https://docs.python.org/3/library/operator.html
+排序指南：
+https://docs.python.org/zh-cn/3/howto/sorting.html
+
+from operator import itemgetter, attrgetter
+
+student_tuples = [
+    ('john', 'A', 15),
+    ('jane', 'B', 12),
+    ('dave', 'B', 10),
+]
+sorted(student_tuples, key=itemgetter(2))
+# [('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]
+
+sorted(student_objects, key=attrgetter('age'))
+# [('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]
+
+
+----
+class Student:
+    def __init__(self, name, grade, age):
+        self.name = name
+        self.grade = grade
+        self.age = age
+    def __repr__(self):
+        return repr((self.name, self.grade, self.age))
+
+student_objects = [
+    Student('john', 'A', 15),
+    Student('jane', 'B', 12),
+    Student('dave', 'B', 10),
+    ]
+def multisort(xs, specs):
+    for key, reverse in reversed(specs):
+        xs.sort(key=attrgetter(key), reverse=reverse)
+    return xs
+
+multisort(list(student_objects), (('grade', True), ('age', False)))
+# [('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]
+
 ```
 
 ### 3. 深浅拷贝
