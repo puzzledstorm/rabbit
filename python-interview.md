@@ -181,8 +181,7 @@ Ldc[i] is L[i]    False
 ### 4. 线程，进程，协程
 资料：
 - bilibili [【2021最新版】Python 并发编程实战，用多线程、多进程、多协程加速程序运行](https://www.bilibili.com/video/BV1bK411A7tV/?share_source=copy_web&vd_source=c25da8b265ca9b9525905cffdc711a63)
-
-[进程、线程、协程对比](https://github.com/AH-Toby/PythonAdvanced/blob/master/docs/14.%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E3%80%81%E5%8D%8F%E7%A8%8B%E5%8C%BA%E5%88%AB.md)
+- github [进程、线程、协程对比](https://github.com/AH-Toby/PythonAdvanced/blob/master/docs/14.%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E3%80%81%E5%8D%8F%E7%A8%8B%E5%8C%BA%E5%88%AB.md)
 ```
 进程是资源分配的单位
 线程是操作系统调度的单位
@@ -190,6 +189,8 @@ Ldc[i] is L[i]    False
 线程切换需要的资源一般，效率一般（当然了在不考虑GIL的情况下）
 协程切换任务资源很小，效率高
 多进程、多线程根据cpu核数不一样可能是并行的，但是协程是在一个线程中 所以是并发
+
+example:
 ```
 
 ```
