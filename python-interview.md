@@ -14,13 +14,21 @@
 第二个特性是，装饰器在加载模块时立即执行。而被装饰的函数只在明确调用时运行。
 ---
 变量作用域规则: 要想在内部函数中使用外部变量，必须做global声明
-闭包
+---
+闭包：
 闭包指延伸了作用域的函数，其中包含函数定义体中引用、但是不在定义体中定义的非全局变量。
-
+example:
+def make_averager():
+  series = []
+  def averager(new_value):
+    series.append(new_value)
+    total = sum(series)
+    return total/len(series)
+  return averager
+---
+装饰器example：
 https://puzzledstorm.github.io/posts/python-decorator/
 ```
-闭包
-![image](https://user-images.githubusercontent.com/74460276/221344459-af047aa3-9e10-44f1-9fee-f7996d4a5f76.png)
 
 ### 2. 高级函数map, reduce, filter，partil operator 匿名函数lambda 
 ```
