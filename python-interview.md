@@ -41,19 +41,19 @@ print(f(3))
 map: 一一映射函数。输入变量为函数和序列，通过定义的函数对序列中的每个元素进行一一映射，返回的是一个列表。
 ```
 ls= [1,2,3,4]
-print( map(lambda x :x*x, ls) )
+print(map(lambda x :x*x, ls) )
 ```
 
 reduce: 函数接收两个参数，一个是函数，另一个是序列，但是，函数必须接收两个参数reduce把结果继续和序列的下一个元素做累积计算，其效果就是reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)。
 ```
 from functools import reduce
-ls= [1,2,3,4]
+ls = [1,2,3,4]
 print(reduce(lambda x,y: x+y, ls))
 ```
 
 filter: filter函数是使用限定条件进行过滤的函数。输入变量为函数和序列，通过指定的函数对序列中的每个元素进行过滤，返回的是一个Iterator（隋性序列），通过list函数可以获得所有结果的列表。
 ```
-ls= [1,2,3,4]
+ls = [1,2,3,4]
 print(list(filter(lambda x:x%2==1,ls)))
 ```
 
