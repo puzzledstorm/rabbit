@@ -40,7 +40,7 @@ print(f(3))
 
 map: 一一映射函数。输入变量为函数和序列，通过定义的函数对序列中的每个元素进行一一映射，返回的是一个列表。
 ```
-ls= [1,2,3,4]
+ls = [1,2,3,4]
 print(map(lambda x :x*x, ls) )
 ```
 
@@ -56,7 +56,44 @@ filter: filter函数是使用限定条件进行过滤的函数。输入变量为
 ls = [1,2,3,4]
 print(list(filter(lambda x:x%2==1,ls)))
 ```
+sorted: sorted函数是排序函数。输入变量为序列和函数，通过定义的函数对序列中的每个元素进行排序，返回的排序后的列表。
+```
+ls = [3,2,1,-4]
+print(sorted(ls, key=lambda x: x*x) )
 
+---
+sorted 与 sort 的区别	
+ls= [3,2,1,-4]
+
+ls_ed=sorted(ls, key=lambda x: x*x) 
+print(ls)		#-[3, 2, 1, -4]
+
+ls.sort(key=lambda x: x*x )
+print(ls)  # [1, 2, 3, -4]
+
+sorted 与 sort 的区别
+- 都可以使用可选参数key和reverse	
+- sorted()可在列表，字符串和元组中使用，而sort()仅在列表中使用
+ls= [3,2,1,-4]
+ls_sorted=sorted( ls, key=abs, reverse=True) 
+print(ls_sorted)		# [-4, 3, 2, 1]
+str_sorted=sorted("spam")
+print(str_sorted)		# ['a', 'm', 'p', 's']
+```
+zip: zip函数将多个可迭代的对象作为参数，依次将对象中对应的元素打包成一个个tuple（元组），然后返回由这些tuples组成的迭代器。
+```
+names=['张三','李四','王五'] 
+sexs='男女男' 
+scores=[86,92,75] 
+for name,sex,score in zip(names,sexs,scores): 
+    print('{}:{} {}'.format(name,sex,score)) 
+```
+enumerate: enumerate函数将一个可遍历的数据对象（如列表、元组或字符串）组合为一个索引序列，同时列出数据和数据的下标。常用在for循环当中，可同时得到数据对象的值及对应的索引值.
+```
+list1 = ['zero', 'one', 'two', 'three', 'five'] 
+for i, v in enumerate(list1):  	
+    print('{}:{}'.format(i, v)) 
+```
 partial:
 
 operator:
