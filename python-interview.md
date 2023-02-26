@@ -10,7 +10,6 @@
 ### 1. 装饰器
 ```
 装饰器的一大特性是，能把被装饰的函数替换成其他函数。
-
 第二个特性是，装饰器在加载模块时立即执行。而被装饰的函数只在明确调用时运行。
 ---
 变量作用域规则: 要想在内部函数中使用外部变量，必须做global声明
@@ -30,9 +29,40 @@ def make_averager():
 https://puzzledstorm.github.io/posts/python-decorator/
 ```
 
-### 2. 高级函数map, reduce, filter，partil operator 匿名函数lambda 
+### 2. 内置函数map, reduce, filter，sorted zip enumerate partial operator 匿名函数lambda 
+函数允许我们将复杂的问题分解为若干个子问题，并逐个解决。此外，它还可以减少重复性的代码，并为其他程序所重用。
+
+lambda: lambda表达式，匿名函数。
+```
+f = lambda x: x*2+1
+print(f(3))
+```
+
+map: 一一映射函数。输入变量为函数和序列，通过定义的函数对序列中的每个元素进行一一映射，返回的是一个列表。
+```
+ls= [1,2,3,4]
+print( map(lambda x :x*x, ls) )
+```
+
+reduce: 函数接收两个参数，一个是函数，另一个是序列，但是，函数必须接收两个参数reduce把结果继续和序列的下一个元素做累积计算，其效果就是reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)。
+```
+from functools import reduce
+ls= [1,2,3,4]
+print(reduce(lambda x,y: x+y, ls))
+```
+
+filter: filter函数是使用限定条件进行过滤的函数。输入变量为函数和序列，通过指定的函数对序列中的每个元素进行过滤，返回的是一个Iterator（隋性序列），通过list函数可以获得所有结果的列表。
+```
+ls= [1,2,3,4]
+print(list(filter(lambda x:x%2==1,ls)))
+```
+
+partial:
+
+operator:
 ```
 ```
+
 ### 3. 深浅拷贝
 ### 4. 线程，进程，协程
 ### 5. 上下文管理器
@@ -42,8 +72,8 @@ https://puzzledstorm.github.io/posts/python-decorator/
 ```
 https://www.zywvvd.com/notes/coding/python/python-magic-func/python-magic-func/
 ```
-### 9. 面向对象(封装、继承、多态)
 
+### 9. 面向对象(封装、继承、多态)
 
 ## pandas numpy opencv等常用三方库
 
