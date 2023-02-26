@@ -151,6 +151,33 @@ multisort(list(student_objects), (('grade', True), ('age', False)))
 ```
 
 ### 3. 深浅拷贝
+```
+浅拷贝(会创建新对象，其内容是原对象的引用)
+简单而言，假定L1是L的浅拷贝，则有
+L1 is L          False
+L1[i] is L[i]    True
+有五种形式：
+切片操作
+    L1 = L[:]
+列表推导式
+    L2 = [ item for item in L]
+工厂函数
+    L3 = list(L)
+list.copy函数
+    L4 = L.copy()
+copy模块中的copy函数
+    L5 = copy.copy(L)
+
+深拷贝(拷贝对象的所有元素，包括多层嵌套的元素)
+  只有一种形式：
+copy模块中的deepcopy函数
+    Ldc = copy.deepcopy(L)
+简单而言，假定Ldc是L的深拷贝，则Ldc是一个全新的对象，不再与L有任何关联
+Ldc is L          False
+Ldc[i] is L[i]    False
+
+```
+
 ### 4. 线程，进程，协程
 ### 5. 上下文管理器
 ### 6. unittest单元测试
